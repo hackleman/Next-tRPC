@@ -1,5 +1,9 @@
+// @ts-ignore -- no types for this plugin
 import { FlatCompat } from "@eslint/eslintrc";
+
+// @ts-ignore -- no types for this plugin
 import tseslint from "typescript-eslint";
+
 // @ts-ignore -- no types for this plugin
 import drizzle from "eslint-plugin-drizzle";
 
@@ -54,7 +58,7 @@ export default tseslint.config(
     },
     languageOptions: {
       parserOptions: {
-        projectService: true,
+        project: "./tsconfig.json",
       },
     },
   },
