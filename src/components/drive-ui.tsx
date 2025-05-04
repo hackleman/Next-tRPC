@@ -191,16 +191,16 @@ export function DriveUI() {
   })
 
   // Navigate to a folder
-  const navigateToFolder = (folderId: string, folderName: string) => {
+  const navigateToFolder = (folderId: string, _folderName: string) => {
     setCurrentPath([...currentPath, folderId])
   }
 
   // Navigate up one level
-  const navigateUp = () => {
-    if (currentPath.length > 1) {
-      setCurrentPath(currentPath.slice(0, -1))
-    }
-  }
+  // const navigateUp = () => {
+  //   if (currentPath.length > 1) {
+  //     setCurrentPath(currentPath.slice(0, -1))
+  //   }
+  // }
 
   // Get breadcrumb names
   const getBreadcrumbName = (pathItem: string) => {
@@ -303,7 +303,7 @@ export function DriveUI() {
               </div>
               <div className="col-span-3">{item.modified}</div>
               <div className="col-span-1 flex items-center justify-between">
-                <span>{item.size || "--"}</span>
+                <span>{item.size ?? "--"}</span>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" size="icon" className="h-8 w-8 hover:bg-gray-800">
